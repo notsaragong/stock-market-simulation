@@ -1,2 +1,2 @@
-# stock-market-simulation
+# Stock Market Simulation
 spring 2018
