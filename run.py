@@ -22,7 +22,7 @@ def scrapeData(stockList):
         list = []
         ticker = stock.getTicker()
         list.append(ticker)
-        print("Please wait. Now downloading data for:", stock.getCompany())
+        print("Please wait. Now scraping data for:", stock.getCompany())
         priceList = stock.getPriceList()
         for price in priceList:
             list.append(price)
@@ -228,24 +228,23 @@ def graph(yearList, worthList, name):
 def main():
     # welcome
     print("\033[1mWelcome to Wall Street.\033[0m")
-    print("You'll start out with $1000 in the bank, and you have 10 years to make it rain. Good luck!")
+    print("You'll start out with $1000 in the bank, and you'll have 10 years to make it rain. Good luck!")
 
     # Hard code the stocks on the market
     AAPL = Stock("AAPL")
     BP = Stock("BP")
     CVX = Stock("CVX")
-    FOX = Stock("FOX")
     KO = Stock("KO")
     MCD = Stock("MCD")
     PG = Stock("PG")
     TGT = Stock("TGT")
     WMT = Stock("WMT")
     XOM = Stock("XOM")
-    stockList = [AAPL, BP, CVX, FOX, KO, MCD, PG, TGT, WMT, XOM]
+    stockList = [AAPL, BP, CVX, KO, MCD, PG, TGT, WMT, XOM]
 
     # if price data does not exist in a file
     if os.path.exists("YahooFinanceData.csv") == False:
-        print("\nDownloading data from Yahoo Finance... This should take 5-10 minutes.")
+        print("\nScraping data from Yahoo Finance... This should take 5-10 minutes.")
         dataList = scrapeData(stockList)
         saveData(dataList)
         print("Data saved to YahooFinanceData.csv")

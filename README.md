@@ -1,2 +1,3 @@
-# Stock Market Simulation
-spring 2018
+# Code Sample: Web Scraping and Programming with Python
+
+This stock market simulation is a terminal-based game that is run with the script run.py. Before the simulation initiates, data on historical stock prices is scraped from Yahoo Finance and saved to the user's local directory as a CSV file. Then, the simulation is played as the user issues instructions to the terminal in order to buy or sell stocks over the course of 10 years.
